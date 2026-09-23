@@ -11,7 +11,8 @@ services:
     # Root of the monorepo
     rootDir: .
 
-    # Install from root so npm workspace symlinks resolve @prep-kit/shared locally
+    # Install from root so npm workspace symlinks resolve @prep-kit/shared locally.
+    # Explicit sequence: shared first (creates dist/), then backend tsc.
     buildCommand: npm install && npm --prefix shared run build && npm --prefix backend run build
 
     startCommand: node backend/dist/server.js

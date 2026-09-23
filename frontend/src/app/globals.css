@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-[#0a0d14] text-slate-100 antialiased min-h-screen;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    selection-color: #2dd4bf;
+  }
+  ::-webkit-selection {
+    background: rgba(45, 212, 191, 0.3);
+    color: #ccfbf1;
+  }
+  ::selection {
+    background: rgba(45, 212, 191, 0.3);
+    color: #ccfbf1;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  }
+}
+
+/* ============================================================
+   Custom Scrollbar
+   ============================================================ */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #0a0d14; }
+::-webkit-scrollbar-thumb { background: #1e2638; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #2dd4bf; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ============================================================
+   Glassmorphism Utilities
+   ============================================================ */
+.glass-panel {
+  background: rgba(18, 22, 32, 0.80);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.glass-panel-hover {
+  transition: background 0.2s, border-color 0.2s;
+}
+.glass-panel-hover:hover {
+  background: rgba(24, 32, 48, 0.90);
+  border-color: rgba(45, 212, 191, 0.25);
+}
+
+/* ============================================================
+   Gradient Utilities
+   ============================================================ */
+.gradient-brand {
+  background: linear-gradient(135deg, #14b8a6, #10b981);
+}
+.gradient-text-brand {
+  background: linear-gradient(to right, #2dd4bf, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,184,166,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ============================================================
+   Card 3D Flip
+   ============================================================ */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }
+
+/* ============================================================
+   Animations
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.4s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+.animate-in { animation: fadeInUp 0.35s ease-out; }
+
+/* Stagger delay helpers */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* ============================================================
+   Interactive hover utilities
+   ============================================================ */
+.hover-scale { transition: transform 0.15s ease; }
+.hover-scale:hover { transform: scale(1.02); }
+.hover-scale:active { transform: scale(0.98); }
+.active\:scale-98:active { transform: scale(0.98); }
+
+/* ============================================================
+   Form input focus ring
+   ============================================================ */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.4);
+  border-color: #14b8a6;
+}
+
+/* ============================================================
+   Loading skeleton shimmer
+   ============================================================ */
+.skeleton {
+  background: linear-gradient(90deg, #121620 25%, #1e2638 50%, #121620 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ============================================================
+   Mobile-specific overrides
+   ============================================================ */
+@media (max-width: 640px) {
+  .glass-panel { backdrop-filter: blur(8px); }
+  h1 { font-size: clamp(1.5rem, 5vw, 2.25rem) !important; }
+  h2 { font-size: clamp(1.2rem, 4vw, 1.75rem) !important; }
+}
+
+/* Prevent horizontal scroll at all times */
+html, body { overflow-x: hidden; max-width: 100vw; }

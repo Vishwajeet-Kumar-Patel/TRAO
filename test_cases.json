@@ -1,0 +1,20 @@
+[
+  {
+    "id": "case-01-senior-fullstack",
+    "jd": "Senior Full Stack Engineer\nWe are looking for a Senior Full Stack Engineer with 5+ years of experience in React, TypeScript, Node.js, and MongoDB. You will architect real-time event streaming systems and lead code reviews.\nRequirements:\n- 5+ years with React and TypeScript (must)\n- Strong Node.js and MongoDB backend experience (must)\n- Experience with GraphQL APIs and Docker (nice)\n- Proven mentorship and cross-functional team leadership (must)",
+    "company_url": "https://stripe.com",
+    "days": 5
+  },
+  {
+    "id": "case-02-distributed-systems-1day",
+    "jd": "Backend Infrastructure Engineer\nRequirements:\n- Distributed systems and high-throughput microservices (must)\n- Kafka and Redis clustering (must)\n- Golang or Java proficiency (must)\n- Kubernetes deployment pipelines (nice)",
+    "company_url": "https://cloudflare.com",
+    "days": 1
+  },
+  {
+    "id": "case-03-frontend-specialist-10days",
+    "jd": "Lead Frontend Architect\nRequirements:\n- Deep React internals, Next.js App Router, and SSR (must)\n- Web performance optimization, Core Web Vitals (must)\n- Accessible UI design system development (must)\n- Testing with Jest and Playwright (nice)",
+    "company_url": "https://vercel.com",
+    "days": 10
+  }
+]

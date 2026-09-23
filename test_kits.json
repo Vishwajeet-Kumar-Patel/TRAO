@@ -1,0 +1,881 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-09-23T07:22:58.846Z",
+  "kits": [
+    {
+      "id": "case-01-senior-fullstack",
+      "status": "ok",
+      "kit": {
+        "source": {
+          "company": "Stripe | Financial Infrastructure to Grow Your Revenue",
+          "company_url": "https://stripe.com/in",
+          "role": "Senior Full Stack Engineer",
+          "location": "Remote / On-site",
+          "jd_chars": 448,
+          "researched_at": "2026-09-23T07:22:52.143Z",
+          "pages_used": [
+            "https://stripe.com/in",
+            "https://stripe.com/in/careers",
+            "https://stripe.com/in/atlas",
+            "https://stripe.com/in/about"
+          ]
+        },
+        "company_brief": {
+          "summary": "Stripe is a financial services platform that helps all types of businesses accept payments, build flexible billing models and manage money movement.",
+          "what_they_do": "Global GDP running on Stripe:  ### Financial infrastructure to grow your revenue. Accept payments, offer financial services and implement custom revenue models – from your first transaction to your billionth. ### Financial infrastructure to grow your revenue. Accept payments, offer financial services and implement custom revenue models – from your first transaction to your billionth. Request an ...",
+          "sources": [
+            "https://stripe.com/in",
+            "https://stripe.com/in/careers",
+            "https://stripe.com/in/atlas",
+            "https://stripe.com/in/about"
+          ]
+        },
+        "role": {
+          "title": "Senior Full Stack Engineer",
+          "seniority": "Senior",
+          "responsibilities": [],
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "5+ years with React and TypeScript (must)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r2",
+              "text": "Strong Node.js and MongoDB backend experience (must)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r3",
+              "text": "Experience with GraphQL APIs and Docker (nice)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r4",
+              "text": "Proven mentorship and cross-functional team leadership (must)",
+              "kind": "behavioural",
+              "priority": "must"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "q1",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"5+ years with React and TypeScript (must)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of 5+ years with React and TypeScript (must).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q2",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Strong Node.js and MongoDB backend experience (must)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Strong Node.js and MongoDB backend experience (must).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q3",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Experience with GraphQL APIs and Docker (nice)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Experience with GraphQL APIs and Docker (nice).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q4",
+            "requirement_ids": [
+              "r4"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a time when you had to manage constraints or conflicting priorities related to \"Proven mentorship and cross-functional team leadership (must)\". What approach did you take?",
+            "answer_outline": "Situation: Context and stakeholder expectations.\nTask: Objective related to Proven mentorship and cross-functional team leadership (must).\nAction: Leadership, communication, and mitigation steps taken.\nResult: Quantifiable outcome and lessons learned.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q5",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"5+ years with React and TypeScript (must)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q6",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"Strong Node.js and MongoDB backend experience (must)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q7",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"Experience with GraphQL APIs and Docker (nice)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q8",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"5+ years with React and TypeScript (must)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          },
+          {
+            "id": "q9",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"Strong Node.js and MongoDB backend experience (must)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          },
+          {
+            "id": "q10",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"Experience with GraphQL APIs and Docker (nice)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "f1",
+            "front": "Core Principles: 5+ years with React and TypeScript (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with 5+ years with React and TypeScript (must).",
+            "requirement_ids": [
+              "r1"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f2",
+            "front": "Core Principles: Strong Node.js and MongoDB backend experience (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Strong Node.js and MongoDB backend experience (must).",
+            "requirement_ids": [
+              "r2"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f3",
+            "front": "Core Principles: Experience with GraphQL APIs and Docker (nice)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Experience with GraphQL APIs and Docker (nice).",
+            "requirement_ids": [
+              "r3"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f4",
+            "front": "Core Principles: Proven mentorship and cross-functional team leadership (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Proven mentorship and cross-functional team leadership (must).",
+            "requirement_ids": [
+              "r4"
+            ],
+            "origin": "generated"
+          }
+        ],
+        "schedule": {
+          "days_available": 5,
+          "days": [
+            {
+              "day": 1,
+              "focus": "Day 1: System Architecture & High-Scalability Design",
+              "question_ids": [
+                "q5",
+                "q3"
+              ],
+              "minutes": 55
+            },
+            {
+              "day": 2,
+              "focus": "Day 2: System Architecture & High-Scalability Design",
+              "question_ids": [
+                "q6",
+                "q4"
+              ],
+              "minutes": 55
+            },
+            {
+              "day": 3,
+              "focus": "Day 3: System Architecture & High-Scalability Design",
+              "question_ids": [
+                "q7",
+                "q8"
+              ],
+              "minutes": 55
+            },
+            {
+              "day": 4,
+              "focus": "Day 4: Core Technical Proficiencies & Code Deep Dive",
+              "question_ids": [
+                "q1",
+                "q9"
+              ],
+              "minutes": 55
+            },
+            {
+              "day": 5,
+              "focus": "Day 5: Final Mock Interview & Comprehensive Revision",
+              "question_ids": [
+                "q2",
+                "q10"
+              ],
+              "minutes": 55
+            }
+          ]
+        },
+        "coverage": {
+          "uncovered_requirement_ids": [],
+          "passes": 1
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "case-02-distributed-systems-1day",
+      "status": "ok",
+      "kit": {
+        "source": {
+          "company": "Cloudflare: Build for the agent era",
+          "company_url": "https://www.cloudflare.com/",
+          "role": "Backend Infrastructure Engineer",
+          "location": "Remote / On-site",
+          "jd_chars": 221,
+          "researched_at": "2026-09-23T07:22:54.953Z",
+          "pages_used": [
+            "https://www.cloudflare.com/",
+            "https://www.cloudflare.com/careers",
+            "https://www.cloudflare.com/about"
+          ]
+        },
+        "company_brief": {
+          "summary": "Welcome to Cloudflare - Powering the next generation of applications",
+          "what_they_do": "Hero video off in Low preview — use High mode and refresh for full motion.  Connect 2026 · The Agentic Conference of the Year · Oct 19-21  ### Everything we learned from powering 20% of the Internet—yours by default   One platform for your apps, agents, and workforce. Build, secure, and scale without managing infrastructure.  Start building for free  ### Region: Earth   One smart network for wor...",
+          "sources": [
+            "https://www.cloudflare.com/",
+            "https://www.cloudflare.com/careers",
+            "https://www.cloudflare.com/about"
+          ]
+        },
+        "role": {
+          "title": "Backend Infrastructure Engineer",
+          "seniority": "Mid-Level",
+          "responsibilities": [],
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Distributed systems and high-throughput microservices (must)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r2",
+              "text": "Kafka and Redis clustering (must)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r3",
+              "text": "Golang or Java proficiency (must)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r4",
+              "text": "Kubernetes deployment pipelines (nice)",
+              "kind": "technical",
+              "priority": "must"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "q1",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Distributed systems and high-throughput microservices (must)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Distributed systems and high-throughput microservices (must).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q2",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Kafka and Redis clustering (must)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Kafka and Redis clustering (must).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q3",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Golang or Java proficiency (must)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Golang or Java proficiency (must).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q4",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a time when you had to manage constraints or conflicting priorities related to \"Distributed systems and high-throughput microservices (must)\". What approach did you take?",
+            "answer_outline": "Situation: Context and stakeholder expectations.\nTask: Objective related to Distributed systems and high-throughput microservices (must).\nAction: Leadership, communication, and mitigation steps taken.\nResult: Quantifiable outcome and lessons learned.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q5",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a time when you had to manage constraints or conflicting priorities related to \"Kafka and Redis clustering (must)\". What approach did you take?",
+            "answer_outline": "Situation: Context and stakeholder expectations.\nTask: Objective related to Kafka and Redis clustering (must).\nAction: Leadership, communication, and mitigation steps taken.\nResult: Quantifiable outcome and lessons learned.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q6",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a time when you had to manage constraints or conflicting priorities related to \"Golang or Java proficiency (must)\". What approach did you take?",
+            "answer_outline": "Situation: Context and stakeholder expectations.\nTask: Objective related to Golang or Java proficiency (must).\nAction: Leadership, communication, and mitigation steps taken.\nResult: Quantifiable outcome and lessons learned.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q7",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"Distributed systems and high-throughput microservices (must)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q8",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"Kafka and Redis clustering (must)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q9",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"Golang or Java proficiency (must)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q10",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"Distributed systems and high-throughput microservices (must)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          },
+          {
+            "id": "q11",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"Kafka and Redis clustering (must)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          },
+          {
+            "id": "q12",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"Golang or Java proficiency (must)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          },
+          {
+            "id": "q13",
+            "requirement_ids": [
+              "r4"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Kubernetes deployment pipelines (nice)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Kubernetes deployment pipelines (nice).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "f1",
+            "front": "Core Principles: Distributed systems and high-throughput microservices (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Distributed systems and high-throughput microservices (must).",
+            "requirement_ids": [
+              "r1"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f2",
+            "front": "Core Principles: Kafka and Redis clustering (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Kafka and Redis clustering (must).",
+            "requirement_ids": [
+              "r2"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f3",
+            "front": "Core Principles: Golang or Java proficiency (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Golang or Java proficiency (must).",
+            "requirement_ids": [
+              "r3"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f4",
+            "front": "Core Principles: Kubernetes deployment pipelines (nice)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Kubernetes deployment pipelines (nice).",
+            "requirement_ids": [
+              "r4"
+            ],
+            "origin": "generated"
+          }
+        ],
+        "schedule": {
+          "days_available": 1,
+          "days": [
+            {
+              "day": 1,
+              "focus": "Day 1: Comprehensive High-Yield Interview Simulation & Technical Deep Dive",
+              "question_ids": [
+                "q7",
+                "q8",
+                "q9",
+                "q1",
+                "q2",
+                "q3",
+                "q13",
+                "q4",
+                "q5",
+                "q6",
+                "q10",
+                "q11",
+                "q12"
+              ],
+              "minutes": 180
+            }
+          ]
+        },
+        "coverage": {
+          "uncovered_requirement_ids": [],
+          "passes": 2
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "case-03-frontend-specialist-10days",
+      "status": "ok",
+      "kit": {
+        "source": {
+          "company": "Agentic Infrastructure - Vercel",
+          "company_url": "https://vercel.com/",
+          "role": "Lead Frontend Architect",
+          "location": "Remote / On-site",
+          "jd_chars": 242,
+          "researched_at": "2026-09-23T07:22:58.844Z",
+          "pages_used": [
+            "https://vercel.com/",
+            "https://vercel.com/careers",
+            "https://vercel.com/solutions/platform-engineering",
+            "https://vercel.com/solutions/design-engineering"
+          ]
+        },
+        "company_brief": {
+          "summary": "The autonomous stack for every app and agent.",
+          "what_they_do": "Skip to content Ship 26 is coming to SF Get your ticketDrop to deployLoading ### Build agents on infrastructure that thinks like them Notion powers millions of agent conversations daily on Vercel. * Features * Durable Orchestration * Sandboxed Environments * AI Model Gateway * Fluid Compute ### Ship apps that scale from zero to millions instantly Zapier serves over 100 million monthly website...",
+          "sources": [
+            "https://vercel.com/",
+            "https://vercel.com/careers",
+            "https://vercel.com/solutions/platform-engineering",
+            "https://vercel.com/solutions/design-engineering"
+          ]
+        },
+        "role": {
+          "title": "Lead Frontend Architect",
+          "seniority": "Lead",
+          "responsibilities": [],
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Deep React internals, Next.js App Router, and SSR (must)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r2",
+              "text": "Web performance optimization, Core Web Vitals (must)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r3",
+              "text": "Accessible UI design system development (must)",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r4",
+              "text": "Testing with Jest and Playwright (nice)",
+              "kind": "technical",
+              "priority": "must"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "q1",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Deep React internals, Next.js App Router, and SSR (must)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Deep React internals, Next.js App Router, and SSR (must).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q2",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Web performance optimization, Core Web Vitals (must)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Web performance optimization, Core Web Vitals (must).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q3",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Accessible UI design system development (must)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Accessible UI design system development (must).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q4",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a time when you had to manage constraints or conflicting priorities related to \"Deep React internals, Next.js App Router, and SSR (must)\". What approach did you take?",
+            "answer_outline": "Situation: Context and stakeholder expectations.\nTask: Objective related to Deep React internals, Next.js App Router, and SSR (must).\nAction: Leadership, communication, and mitigation steps taken.\nResult: Quantifiable outcome and lessons learned.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q5",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a time when you had to manage constraints or conflicting priorities related to \"Web performance optimization, Core Web Vitals (must)\". What approach did you take?",
+            "answer_outline": "Situation: Context and stakeholder expectations.\nTask: Objective related to Web performance optimization, Core Web Vitals (must).\nAction: Leadership, communication, and mitigation steps taken.\nResult: Quantifiable outcome and lessons learned.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q6",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a time when you had to manage constraints or conflicting priorities related to \"Accessible UI design system development (must)\". What approach did you take?",
+            "answer_outline": "Situation: Context and stakeholder expectations.\nTask: Objective related to Accessible UI design system development (must).\nAction: Leadership, communication, and mitigation steps taken.\nResult: Quantifiable outcome and lessons learned.",
+            "difficulty": 2,
+            "origin": "generated"
+          },
+          {
+            "id": "q7",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"Deep React internals, Next.js App Router, and SSR (must)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q8",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"Web performance optimization, Core Web Vitals (must)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q9",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "system-design",
+            "prompt": "Design a resilient, fault-tolerant service architecture incorporating \"Accessible UI design system development (must)\" supporting high concurrency and low latency.",
+            "answer_outline": "1. Functional & Non-functional requirements (QPS, SLA, storage).\n2. High-level architecture & API contracts.\n3. Data modeling, caching, sharding, and failover mechanics.",
+            "difficulty": 3,
+            "origin": "generated"
+          },
+          {
+            "id": "q10",
+            "requirement_ids": [
+              "r1"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"Deep React internals, Next.js App Router, and SSR (must)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          },
+          {
+            "id": "q11",
+            "requirement_ids": [
+              "r2"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"Web performance optimization, Core Web Vitals (must)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          },
+          {
+            "id": "q12",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "company-fit",
+            "prompt": "How does your previous experience with \"Accessible UI design system development (must)\" align with our engineering culture of high ownership and continuous delivery?",
+            "answer_outline": "1. Personal work ethic and alignment with engineering excellence.\n2. Collaboration across cross-functional teams.\n3. Continuous learning and mentorship philosophy.",
+            "difficulty": 1,
+            "origin": "generated"
+          },
+          {
+            "id": "q13",
+            "requirement_ids": [
+              "r4"
+            ],
+            "category": "technical",
+            "prompt": "How would you demonstrate depth and handle edge cases when applying \"Testing with Jest and Playwright (nice)\" in a scalable production codebase?",
+            "answer_outline": "1. Core mechanics and lifecycle of Testing with Jest and Playwright (nice).\n2. Performance bottlenecks and optimization patterns.\n3. Common architectural pitfalls and debugging strategies.",
+            "difficulty": 2,
+            "origin": "generated"
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "f1",
+            "front": "Core Principles: Deep React internals, Next.js App Router, and SSR (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Deep React internals, Next.js App Router, and SSR (must).",
+            "requirement_ids": [
+              "r1"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f2",
+            "front": "Core Principles: Web performance optimization, Core Web Vitals (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Web performance optimization, Core Web Vitals (must).",
+            "requirement_ids": [
+              "r2"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f3",
+            "front": "Core Principles: Accessible UI design system development (must)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Accessible UI design system development (must).",
+            "requirement_ids": [
+              "r3"
+            ],
+            "origin": "generated"
+          },
+          {
+            "id": "f4",
+            "front": "Core Principles: Testing with Jest and Playwright (nice)",
+            "back": "Key architectural patterns, trade-offs, and best practices associated with Testing with Jest and Playwright (nice).",
+            "requirement_ids": [
+              "r4"
+            ],
+            "origin": "generated"
+          }
+        ],
+        "schedule": {
+          "days_available": 10,
+          "days": [
+            {
+              "day": 1,
+              "focus": "Day 1: System Architecture & High-Scalability Design",
+              "question_ids": [
+                "q7",
+                "q10"
+              ],
+              "minutes": 55
+            },
+            {
+              "day": 2,
+              "focus": "Day 2: System Architecture & High-Scalability Design",
+              "question_ids": [
+                "q8",
+                "q11"
+              ],
+              "minutes": 55
+            },
+            {
+              "day": 3,
+              "focus": "Day 3: System Architecture & High-Scalability Design",
+              "question_ids": [
+                "q9",
+                "q12"
+              ],
+              "minutes": 55
+            },
+            {
+              "day": 4,
+              "focus": "Day 4: Core Technical Proficiencies & Code Deep Dive",
+              "question_ids": [
+                "q1"
+              ],
+              "minutes": 35
+            },
+            {
+              "day": 5,
+              "focus": "Day 5: Core Technical Proficiencies & Code Deep Dive",
+              "question_ids": [
+                "q2"
+              ],
+              "minutes": 35
+            },
+            {
+              "day": 6,
+              "focus": "Day 6: Core Technical Proficiencies & Code Deep Dive",
+              "question_ids": [
+                "q3"
+              ],
+              "minutes": 35
+            },
+            {
+              "day": 7,
+              "focus": "Day 7: Core Technical Proficiencies & Code Deep Dive",
+              "question_ids": [
+                "q13"
+              ],
+              "minutes": 35
+            },
+            {
+              "day": 8,
+              "focus": "Day 8: Behavioral STAR Scenarios & Leadership Alignment",
+              "question_ids": [
+                "q4"
+              ],
+              "minutes": 35
+            },
+            {
+              "day": 9,
+              "focus": "Day 9: Behavioral STAR Scenarios & Leadership Alignment",
+              "question_ids": [
+                "q5"
+              ],
+              "minutes": 35
+            },
+            {
+              "day": 10,
+              "focus": "Day 10: Final Mock Interview & Comprehensive Revision",
+              "question_ids": [
+                "q6"
+              ],
+              "minutes": 35
+            }
+          ]
+        },
+        "coverage": {
+          "uncovered_requirement_ids": [],
+          "passes": 2
+        }
+      },
+      "error": null
+    }
+  ]
+}

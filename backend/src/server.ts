@@ -7,9 +7,14 @@ import apiRouter from './routes/api.js';
 const app = express();
 
 // Middleware
+// Allow origins configured via env (comma-separated), default to wildcard for local dev.
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',')
+  : ['*'];
+
 app.use(
   cors({
-    origin: '*',
+    origin: allowedOrigins.includes('*') ? '*' : allowedOrigins,
     credentials: true,
   })
 );

@@ -1,0 +1,52 @@
+# render.yaml — Render deployment manifest for PrepKit AI Backend
+# https://render.com/docs/render-yaml-reference
+
+services:
+  - type: web
+    name: prepkit-ai-backend
+    runtime: node
+    region: oregon
+    plan: free
+
+    # Root of the monorepo
+    rootDir: .
+
+    # Install all workspace deps from root, then build shared + backend
+    buildCommand: |
+      npm install --workspaces=false
+      npm install --prefix shared
+      npm install --prefix backend
+      npm --prefix shared run build
+      npm --prefix backend run build
+
+    startCommand: node backend/dist/server.js
+
+    healthCheckPath: /api/health
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+      # ── Secrets — set these in the Render Dashboard ──────────────────────
+      - key: JWT_SECRET
+        generateValue: true          # Render auto-generates a secure random value
+
+      - key: MONGODB_URI
+        sync: false                  # Paste your Atlas connection string in Dashboard
+
+      - key: LLM_API_KEY
+        sync: false                  # Your Gemini or OpenAI API key
+
+      # ── LLM config (edit if you prefer OpenAI) ───────────────────────────
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: LLM_MODEL
+        value: gemini-1.5-flash
+
+      # ── Crawler ───────────────────────────────────────────────────────────
+      - key: CRAWLER_MAX_PAGES
+        value: 4
+      - key: CRAWLER_TIMEOUT_MS
+        value: 8000

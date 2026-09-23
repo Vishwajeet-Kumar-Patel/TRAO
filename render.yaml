@@ -11,13 +11,8 @@ services:
     # Root of the monorepo
     rootDir: .
 
-    # Install all workspace deps from root, then build shared + backend
-    buildCommand: |
-      npm install --workspaces=false
-      npm install --prefix shared
-      npm install --prefix backend
-      npm --prefix shared run build
-      npm --prefix backend run build
+    # Install from root so npm workspace symlinks resolve @prep-kit/shared locally
+    buildCommand: npm install && npm --prefix shared run build && npm --prefix backend run build
 
     startCommand: node backend/dist/server.js
 

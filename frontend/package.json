@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3000",
+    "prebuild": "npm run build --prefix ../shared --if-present || true",
     "build": "next build",
+    "build:shared": "npm run build --prefix ../shared --if-present || true",
+    "build:frontend": "next build",
+    "dev": "next dev -p 3000",
     "start": "next start -p 3000",
     "lint": "next lint"
   },

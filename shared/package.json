@@ -5,6 +5,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "build:shared": "tsc",
     "test": "vitest run"
   },
   "dependencies": {

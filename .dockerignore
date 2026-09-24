@@ -5,7 +5,10 @@ npm-debug.log
 !.env.example
 .git
 .gitignore
-coverage
+/coverage/
+backend/coverage/
+shared/coverage/
+frontend/coverage/
 dist
 logs
 .DS_Store

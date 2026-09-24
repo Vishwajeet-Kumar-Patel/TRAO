@@ -47,9 +47,12 @@ Desktop.ini
 *.tsbuildinfo
 **/*.tsbuildinfo
 
-# Test coverage
-coverage/
-**/coverage/
+# Test coverage reports
+/coverage/
+backend/coverage/
+shared/coverage/
+frontend/coverage/
+*.lcov
 
 # Misc
 .turbo/

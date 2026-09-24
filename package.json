@@ -5,16 +5,18 @@
   "description": "AI Interview Prep Kit with deterministic coverage, schedule allocation, crawler, and batch evaluation CLI",
   "scripts": {
     "evaluate": "tsx backend/src/scripts/evaluate.ts",
-    "dev:backend": "npm --prefix backend run dev",
-    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm run dev --workspace=@prep-kit/backend",
+    "dev:frontend": "npm run dev --workspace=@prep-kit/frontend",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "build:shared": "npm --prefix shared run build",
-    "build:backend": "npm --prefix backend run build",
-    "build:frontend": "npm --prefix frontend run build",
+    "build:shared": "npm run build --workspace=@prep-kit/shared",
+    "build:backend": "npm run build --workspace=@prep-kit/backend",
+    "build:frontend": "npm run build --workspace=@prep-kit/frontend",
     "build:server": "npm run build:shared && npm run build:backend",
-    "build": "npm run build:shared && npm run build:backend && npm run build:frontend",
-    "test": "npm --prefix backend test",
-    "test:shared": "npm --prefix shared test"
+    "build": "npm run build:server && npm run build:frontend",
+    "start:backend": "npm run start --workspace=@prep-kit/backend",
+    "start:frontend": "npm run start --workspace=@prep-kit/frontend",
+    "test": "npm run test --workspace=@prep-kit/backend",
+    "test:shared": "npm run test --workspace=@prep-kit/shared"
   },
   "workspaces": [
     "shared",

@@ -12,6 +12,11 @@ export const config = {
   isProduction: process.env.NODE_ENV === 'production',
   jwtSecret: process.env.JWT_SECRET || 'ai-interview-prep-kit-jwt-secret-key-2026',
   mongoUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/interview_prep_kit',
+  frontendUrls: [
+    ...(process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(',').map((u) => u.trim()) : []),
+    ...(process.env.FRONTEND_URLS ? process.env.FRONTEND_URLS.split(',').map((u) => u.trim()) : []),
+    ...(process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',').map((u) => u.trim()) : []),
+  ].filter(Boolean),
   allowLocalhostSsrf:
     process.env.ALLOW_LOCALHOST_SSRF === 'true' ||
     process.env.NODE_ENV !== 'production' ||
@@ -29,3 +34,4 @@ export const config = {
     maxRetries: 3,
   },
 };
+

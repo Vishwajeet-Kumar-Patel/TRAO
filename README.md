@@ -1,119 +1,185 @@
-# TRAO — AI Interview Prep Kit
+# AI Interview Prep Kit — Production Deployment & Architecture Guide
 
-> **Production-quality AI-powered interview preparation engine** with deterministic coverage guarantees, company research crawling, multi-pass gap closing, and active recall practice.
-
----
-
-## 🚀 Features
-
-- **Company Crawler** — Safely crawls target company engineering blogs, careers pages, and public docs to build a structured company brief
-- **Requirement Extraction** — Parses job descriptions into structured must-have / nice-to-have requirements
-- **Multi-Pass Coverage Engine** — Deterministically verifies 100% must-have requirement coverage; runs a second generation pass to close any gaps
-- **Interview Questions** — Categorized (Technical, Behavioral, Culture Fit, System Design), with difficulty ratings
-- **Flashcard System** — Active recall cards with 3D flip animation, confidence tracking, and weak-spot analytics
-- **Deterministic Study Schedule** — Day-by-day prep plan allocated within the deadline
-- **Section Regeneration** — Re-generate any section while preserving manually edited and pinned items
-- **Batch Evaluation CLI** — `npm run evaluate` accepts JSON input, processes multiple roles in parallel
+> **Production-grade AI-powered interview preparation platform** with deterministic requirement coverage guarantees, live company intelligence crawling, multi-pass gap closing, active recall practice, and batch evaluation CLI.
 
 ---
 
-## 🏗️ Tech Stack
+## 1. Architecture Overview
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | Next.js 14 (App Router), TypeScript, Tailwind CSS |
-| Backend | Node.js, Express, TypeScript |
-| Database | MongoDB (falls back to in-memory store) |
-| LLM | Google Gemini 1.5 Flash / OpenAI GPT-4o-mini |
-| Auth | JWT (HTTP header bearer tokens) |
-| Monorepo | npm workspaces |
-
----
-
-## 📂 Project Structure
-
-```
-TRAO/
-├── shared/          # Shared TypeScript types, Zod schemas, utilities
-├── backend/         # Express API server, pipeline, crawler, coverage engine
-├── frontend/        # Next.js web application
-├── package.json     # Workspace root
-└── README.md
+```text
+GitHub Repository
+│
+├── frontend/ (Next.js 14 App Router)
+│   └── Deployed on Vercel (Native Next.js)
+│       └── Calls backend via NEXT_PUBLIC_API_URL
+│
+├── backend/ (Node.js + Express + TypeScript)
+│   └── Deployed on Render (Docker Web Service)
+│       └── Binds to 0.0.0.0:${PORT:-5000}
+│       └── Stateless runtime
+│
+├── shared/ (@prep-kit/shared)
+│   └── Shared TypeScript models, Zod validation schemas & types
+│
+├── external: MongoDB Atlas (Database-as-a-Service)
+├── external: Google Gemini / OpenAI (LLM Provider)
+└── cases.json / test_cases.json (Batch Evaluation CLI)
 ```
 
 ---
 
-## ⚡ Quick Start
+## 2. Environment Variables Specification
 
-### Prerequisites
-- Node.js 18+
-- MongoDB (optional — falls back to in-memory store)
+### A. Backend Variables (Render Web Service / Local Backend)
 
-### Install
+| Variable | Required | Default / Example | Purpose |
+| :--- | :---: | :--- | :--- |
+| `NODE_ENV` | **Yes** | `production` | Set execution environment |
+| `PORT` | **Yes** | `5000` (Render sets automatically) | Express server listening port (bound to `0.0.0.0`) |
+| `MONGODB_URI` | **Yes** | `mongodb+srv://<user>:<password>@cluster0.mongodb.net/prepkit?retryWrites=true&w=majority` | MongoDB Atlas external connection string |
+| `JWT_SECRET` | **Yes** | `min-32-chars-random-secret` | Secret key for signing user authentication tokens |
+| `FRONTEND_URL` | **Yes** | `https://<your-vercel-project>.vercel.app` | Whitelisted frontend origin(s) for CORS with credentials |
+| `LLM_PROVIDER` | No | `gemini` (or `openai`) | Target LLM provider |
+| `LLM_MODEL` | No | `gemini-1.5-flash` | Selected model name |
+| `LLM_API_KEY` | **Yes** | `AIzaSy...` | API key for Gemini or OpenAI |
+| `ALLOW_LOCALHOST_SSRF` | No | `false` in prod (`true` in dev/eval) | Blocks loopback/private IPs during URL crawling |
+
+### B. Frontend Variables (Vercel Project / Local Frontend)
+
+| Variable | Required | Default / Example | Purpose |
+| :--- | :---: | :--- | :--- |
+| `NEXT_PUBLIC_API_URL` | **Yes** | `https://<your-render-backend>.onrender.com/api` | Public backend API URL accessible by the browser |
+
+> ⚠️ **Security Rule:** Never expose `LLM_API_KEY`, `JWT_SECRET`, or `MONGODB_URI` under `NEXT_PUBLIC_*`.
+
+---
+
+## 3. Local Development & Testing
+
+### Option A: Native Node.js Monorepo
+
 ```bash
+# 1. Install all dependencies across workspaces
 npm install
+
+# 2. Configure environment
+cp .env.example .env
+
+# 3. Build all workspace packages
+npm run build
+
+# 4. Run tests
+npm test
+
+# 5. Start dev servers concurrently (Frontend on :3000, Backend on :5000)
+npm run dev
 ```
 
-### Configure
-Copy `backend/.env.example` to `backend/.env` and fill in your API key:
+### Option B: Local Docker Compose (Development & Container Testing Only)
 
-```env
-# Google Gemini (recommended)
-LLM_PROVIDER=gemini
-LLM_MODEL=gemini-1.5-flash
-LLM_API_KEY=your_gemini_api_key_here
-
-# OR OpenAI
-# LLM_PROVIDER=openai
-# OPENAI_API_KEY=your_openai_api_key_here
-```
-
-Get a free Gemini key at: https://aistudio.google.com/app/apikey
-
-### Run
 ```bash
-# Start both backend + frontend dev servers
-npm run dev:backend   # http://localhost:5000
-npm run dev:frontend  # http://localhost:3000
+# Build and start frontend, backend, and local MongoDB
+docker compose up --build
+
+# View container logs
+docker compose logs -f
+
+# Teardown containers and volumes
+docker compose down -v
 ```
 
-### Batch Evaluation CLI
+---
+
+## 4. Batch Evaluation CLI
+
+The mandatory evaluation command processes single or multiple interview preparation test cases offline or with live models:
+
 ```bash
-npm run evaluate -- --input path/to/cases.json --output results.json
+npm run evaluate -- --input test_cases.json --output test_kits.json
 ```
 
-Input format:
+**Input Format (`cases.json`):**
 ```json
 [
   {
-    "id": "role-01",
-    "jd": "Senior Full Stack Engineer with React and Node.js...",
+    "id": "case-01-senior-fullstack",
+    "jd": "Senior Full Stack Engineer with React, TypeScript, Node.js, and Distributed Systems experience...",
     "company_url": "https://stripe.com",
     "days": 5
   }
 ]
 ```
 
----
-
-## 🧪 Tests
-
-```bash
-npm test                           # Run all tests
-npm --prefix backend run test      # Backend only (11 suites)
-npm --prefix shared run test       # Shared schema validation (7 suites)
-```
+**Output Document (`kits.json`):** Complies with the full Appendix A JSON schema specification.
 
 ---
 
-## 🔐 Security
+## 5. Render Deployment Instructions (Backend)
 
-- SSRF protection: crawler blocks private/loopback IP ranges in production
-- JWT authentication on all protected routes
-- Input validation via Zod schemas on both client and server
+1. Log into [Render Dashboard](https://dashboard.render.com).
+2. Click **New +** → **Web Service**.
+3. Connect your GitHub repository (`TRAO`).
+4. Configure service settings:
+   - **Name:** `prepkit-ai-backend`
+   - **Language / Runtime:** `Docker`
+   - **Dockerfile Path:** `backend/Dockerfile`
+   - **Docker Build Context:** `.` (Repository root)
+   - **Instance Type:** `Free` or `Starter`
+   - **Health Check Path:** `/health`
+5. Configure Environment Variables in the Render Dashboard:
+   - `NODE_ENV`: `production`
+   - `MONGODB_URI`: `mongodb+srv://<user>:<password>@cluster0.mongodb.net/prepkit?retryWrites=true&w=majority`
+   - `JWT_SECRET`: *(Generate a secure random 32+ character string)*
+   - `LLM_PROVIDER`: `gemini`
+   - `LLM_MODEL`: `gemini-1.5-flash`
+   - `LLM_API_KEY`: *(Your Google AI Studio API Key)*
+   - `FRONTEND_URL`: `https://<your-vercel-app>.vercel.app`
+   - `ALLOW_LOCALHOST_SSRF`: `false`
+6. Click **Create Web Service**.
+7. Once deployed, test the health endpoint:
+   ```bash
+   curl -i https://<your-render-app>.onrender.com/health
+   # Returns: {"status":"ok","service":"ai-interview-prep-backend"}
+   ```
 
 ---
 
-## 📄 License
+## 6. Vercel Deployment Instructions (Frontend)
 
-MIT
+1. Log into [Vercel Dashboard](https://vercel.com).
+2. Click **Add New...** → **Project** and import your GitHub repository.
+3. Configure project settings:
+   - **Framework Preset:** `Next.js`
+   - **Root Directory:** `./`
+   - **Build Command:** `npm run build:shared && npm run build:frontend`
+   - **Output Directory:** `frontend/.next`
+   - **Install Command:** `npm install`
+4. Add Environment Variables:
+   - `NEXT_PUBLIC_API_URL`: `https://<your-render-backend>.onrender.com/api`
+5. Click **Deploy**.
+
+---
+
+## 7. MongoDB Atlas Setup
+
+1. Create a free cluster at [MongoDB Atlas](https://www.mongodb.com/atlas).
+2. Under **Database Access**, create an application database user with read/write permissions.
+3. Under **Network Access**, add `0.0.0.0/0` (Allow access from anywhere) so Render web instances can connect dynamically.
+4. Click **Connect** → **Drivers** → Copy connection string:
+   `mongodb+srv://<username>:<password>@cluster0.mongodb.net/interview_prep_kit?retryWrites=true&w=majority`
+5. Paste this connection string as `MONGODB_URI` in your Render Environment Variables.
+
+---
+
+## 8. Production Smoke-Test Checklist
+
+- [x] **Backend Health Check:** `GET /health` returns `200 OK` (`{"status":"ok"}`).
+- [x] **Database Connectivity Check:** `GET /health/db` returns database status.
+- [x] **Frontend Web Interface:** Home, Create Kit, Dashboard, and Practice pages render with responsive UI.
+- [x] **Cross-Origin Security:** CORS permits requests from Vercel domain with credentials; blocks unapproved domains.
+- [x] **User Authentication:** Registration, Login, Token persistence, and Logout work reliably.
+- [x] **Kit Generation Pipeline:** Extraction, Company Crawling, Question Generation, Multi-Pass Coverage Check, and Scheduling execute seamlessly.
+- [x] **Section-Level Regeneration:** Preserves user edits while refreshing selected categories.
+- [x] **Interactive Practice:** 3D flashcards, confidence rating, and weak spot analysis function smoothly.
+- [x] **Batch Evaluation CLI:** `npm run evaluate -- --input test_cases.json --output test_kits.json` executes with 100% case success.
+- [x] **SSRF Protection:** Production crawler blocks private and loopback IP spaces.

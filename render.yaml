@@ -4,45 +4,40 @@
 services:
   - type: web
     name: prepkit-ai-backend
-    runtime: node
+    runtime: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: .
     region: oregon
     plan: free
 
-    # Root of the monorepo
-    rootDir: .
-
-    # Install from root so npm workspace symlinks resolve @prep-kit/shared locally.
-    # Explicit sequence: shared first (creates dist/), then backend tsc.
-    buildCommand: npm install && npm --prefix shared run build && npm --prefix backend run build
-
-    startCommand: node backend/dist/server.js
-
-    healthCheckPath: /api/health
+    healthCheckPath: /health
 
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
+      - key: FRONTEND_URL
+        sync: false                  # Set your Vercel URL (e.g. https://your-app.vercel.app)
 
       # ── Secrets — set these in the Render Dashboard ──────────────────────
       - key: JWT_SECRET
         generateValue: true          # Render auto-generates a secure random value
 
       - key: MONGODB_URI
-        sync: false                  # Paste your Atlas connection string in Dashboard
+        sync: false                  # Paste your MongoDB Atlas connection string in Dashboard
 
       - key: LLM_API_KEY
         sync: false                  # Your Gemini or OpenAI API key
 
-      # ── LLM config (edit if you prefer OpenAI) ───────────────────────────
+      # ── LLM config ───────────────────────────────────────────────────────
       - key: LLM_PROVIDER
         value: gemini
       - key: LLM_MODEL
         value: gemini-1.5-flash
 
-      # ── Crawler ───────────────────────────────────────────────────────────
+      # ── Crawler & SSRF ───────────────────────────────────────────────────
+      - key: ALLOW_LOCALHOST_SSRF
+        value: "false"
       - key: CRAWLER_MAX_PAGES
-        value: 4
+        value: "4"
       - key: CRAWLER_TIMEOUT_MS
-        value: 8000
+        value: "8000"
